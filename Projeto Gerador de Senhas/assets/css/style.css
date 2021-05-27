@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #D31027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    color: #ffffff;
+}
+
+.container {
+    min-width: 400px;
+    background-color: #dd001a;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+}
+
+.top {
+    padding: 1em;
+}
+
+.password {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #aa0014;
+    padding: 1em;
+    overflow: auto;
+    font-size: 1em;
+}
+
+input[type=number]{
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 5px 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+.password button {
+    top: 0;
+    right: 0;
+    position: absolute;
+    padding: 1em;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translate(0, 20%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+}
+
+.password button i {
+    font-size: 30px;
+}
+
+.password:hover button {
+    transform: translate(0, 0%);
+    opacity: 1;
+}
+
+.content {
+    padding: 0px 20px 20px 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.generate {
+    width: 100%;
+    display: block;
+    margin-top: 1em;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #dddddd;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #8b0010;
+    transition: ease-out 0.4s;
+}
+
+.generate:hover {
+    box-shadow: inset 400px 0 0 0 #8b0010;
+    color: #ffffff;
+}
