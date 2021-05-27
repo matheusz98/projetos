@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Feathered Friends</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Matheus Costa - https://github.com/matheusz98">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/bc4a93c294.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- Header Area -->
+        <header class="header">
+            <a href="index.html" class="logo">Feathered <span class="green">Friends</span></a>
+            <!-- Nav Area -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#banner">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner Area -->
+        <section class="banner">
+            <div class="content">
+                <h1>Welcome to our <span class="green">Nest!</span></h1>
+                <p>
+                    This is a beautiful birds gallery website inspired by a collection from the <a href="https://www.pexels.com/pt-br/procurar/parrots/" class="link" target="blank">Pexels</a> website.
+                </p>
+                <a href="#gallery" class="btn">Check our flock!</a>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="filter">
+            <article class="item-list">
+                <div class="items">
+                    <span class="item active" data-name="all">All</span>
+                    <span class="item" data-name="macaw">Macaw</span>
+                    <span class="item" data-name="ringneck">Indian Ringneck</span>
+                    <span class="item" data-name="grey">African Grey</span>
+                    <span class="item" data-name="cockatiel">Cockatiel</span>
+                    <span class="item" data-name="toucan">Toucan</span>
+                    <span class="item" data-name="cockatoo">Cockatoo</span>
+                    <span class="item" data-name="hyacinth">Hyacinth Macaw</span>
+                    <span class="item" data-name="amazon">Amazon</span>
+                </div>
+            </article>
+
+            <!-- Gallery -->
+            <article class="gallery" id="gallery">
+                <div class="image" data-name="macaw"><span><img src="images/1.jpg" alt="Macaw"></span></div>
+                <div class="image" data-name="ringneck"><span><img src="images/2.jpg" alt="Indian Ringneck"></span></div>
+                <div class="image" data-name="grey"><span><img src="images/3.jpg" alt="African Grey"></span></div>
+                <div class="image" data-name="cockatiel"><span><img src="images/4.jpg" alt="Cockatiel"></span></div>
+                <div class="image" data-name="toucan"><span><img src="images/5.jpg" alt="Toucan"></span></div>
+                <div class="image" data-name="macaw"><span><img src="images/6.jpg" alt="Macaw"></span></div>
+                <div class="image" data-name="cockatoo"><span><img src="images/7.jpg" alt="Cockatoo"></span></div>
+                <div class="image" data-name="grey"><span><img src="images/8.jpg" alt="African Grey"></span></div>
+                <div class="image" data-name="hyacinth"><span><img src="images/9.jpg" alt="Hyacinth Macaw"></span></div>
+                <div class="image" data-name="hyacinth"><span><img src="images/10.jpg" alt="Hyacinth Macaw"></span></div>
+                <div class="image" data-name="ringneck"><span><img src="images/11.jpg" alt="Indian Ringneck"></span></div>
+                <div class="image" data-name="amazon"><span><img src="images/12.jpg" alt="Amazon"></span></div>
+            </article>
+        </section>
+
+        <!-- Fullscreen image preview box -->
+        <section class="preview-box">
+            <div class="details">
+                <span class="title">Parrot: <p>Not defined</p></span>
+                <span class="icon fas fa-times"></span>
+            </div>
+            <div class="image-box">
+                <img src="" alt="">
+            </div>
+        </section>
+        <div class="shadow"></div>
+
+        <!-- Footer Area -->
+        <footer class="footer">
+            <p>Copyright &copy; 2021 Feathered <span class="green">Friends</span>. All Rights Reserved.</p>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
