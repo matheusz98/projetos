@@ -26,11 +26,19 @@ function App() {
           reminder: false,
       }
   ]);
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
     return (
       <div className="container">
         <div className="content">
           <Header />
-          <Tasks tasks={tasks} />
+          {tasks.length > 0 ? (
+            <Tasks tasks={tasks} onDelete={deleteTask} />
+          ) : (
+            'Nenhum compromisso marcado.'
+          )}
         </div>
       </div>
   );
