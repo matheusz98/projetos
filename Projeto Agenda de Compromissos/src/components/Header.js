@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaPlus } from 'react-icons/fa';
+import Button from './Button';
 
 function Header({ title }) {
     return (
         <header className="header">
             <h1 className="title">{title}</h1>
-            <button className="btn"><FaPlus /></button>
+            <Button />
         </header>
     );
 }

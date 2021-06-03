@@ -20,7 +20,7 @@ body {
 
 .container {
   max-width: 600px;
-  background: #cecece49;
+  background: #ffffff;
   overflow: auto;
   min-height: 300px;
   border-radius: 10px;
@@ -56,4 +56,21 @@ body {
 
 .btn:hover {
   background: rgb(0, 26, 255);
+}
+
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
