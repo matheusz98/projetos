@@ -41,26 +41,9 @@ body {
   align-items: center;
 }
 
-.btn {
-  padding: 15px;
-  border-radius: 50%;
-  border: none;
-  background: #0077a7;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-
-.btn:hover {
-  background: rgb(0, 26, 255);
-}
-
 .btn-form {
   display: inline-block;
-  background: #000;
+  background: rgb(80, 66, 206);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -70,6 +53,12 @@ body {
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+  transition: all 0.5s ease;
+}
+
+.btn-form:hover {
+  background: rgb(35, 13, 231);
+  letter-spacing: 1px;
 }
 
 .btn-form-block {
@@ -111,7 +100,7 @@ body {
   height: 40px;
   margin: 5px;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .form-control-check {
@@ -121,7 +110,7 @@ body {
 }
 
 .form-control-check label {
-  flex: 1;
+  flex: 10;
 }
 
 .form-control-check input {
