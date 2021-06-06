@@ -1,14 +1,24 @@
 const api_url = "https://api.themoviedb.org/3/movie/popular?api_key=3ac59a12f773222a0f0e3bf66560fc56&language=pt-BR&page=1";
 const images = "https://image.tmdb.org/t/p/w500";
-const section = document.querySelector('section');
+const search_movies = "https://api.themoviedb.org/3/search/movie?api_key=3ac59a12f773222a0f0e3bf66560fc56&query=";
 
-async function getMovies() {
-    const res = await fetch(api_url);
+const section = document.querySelector('section');
+const form = document.querySelector('#form');
+const search = document.querySelector('#search');
+
+getMovies(api_url);
+
+async function getMovies(url) {
+    const res = await fetch(url);
     const resData = await res.json();
 
-    console.log(resData);
+    showMoviesBySearch(resData.results);
+}
 
-    resData.results.forEach(movie => {
+function showMoviesBySearch(movies) {
+        section.innerHTML = '';
+
+        movies.forEach(movie => {
         const { poster_path, title, vote_average } = movie;
 
         const movieEl = document.createElement('div');
@@ -24,8 +34,6 @@ async function getMovies() {
 
         section.appendChild(movieEl);
     });
-
-    return resData;
 }
 
 function getRates(vote) {
@@ -38,4 +46,14 @@ function getRates(vote) {
     }
 }
 
-getMovies();
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const searchMovie = search.value;
+
+    if(searchMovie) {
+        getMovies(search_movies + searchMovie);
+
+        search.value = "";
+    }
+});
