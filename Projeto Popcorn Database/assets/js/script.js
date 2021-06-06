@@ -18,7 +18,7 @@ async function getMovies() {
                 <img src="${images + poster_path}" alt="${title}" />
                 <div class="movie-info">
                     <h2>${title}</h2>
-                    <span>${vote_average}</span>
+                    <span class="${getRates(vote_average)}">${vote_average}</span>
                 </div>
         `;
 
@@ -26,6 +26,16 @@ async function getMovies() {
     });
 
     return resData;
+}
+
+function getRates(vote) {
+    if(vote >= 7) {
+        return 'green';
+    } else if (vote >= 5) {
+        return 'yellow';
+    } else {
+        return 'red';
+    }
 }
 
 getMovies();

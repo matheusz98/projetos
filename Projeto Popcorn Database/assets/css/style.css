@@ -61,6 +61,7 @@ section {
     margin: 1em;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 .movies img {
@@ -81,10 +82,20 @@ section {
 }
 
 .movie-info span {
-    background: #C33764;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #003aa7; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 5px;
     padding: 10px;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.movie-info span.green {
+    background-color: #18a113;
+}
+
+.movie-info span.yellow {
+    background-color: #dfb601;
+}
+
+.movie-info span.red {
+    background-color: #d60202;
 }
