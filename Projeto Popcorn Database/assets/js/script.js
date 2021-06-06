@@ -1,6 +1,6 @@
 const api_url = "https://api.themoviedb.org/3/movie/popular?api_key=3ac59a12f773222a0f0e3bf66560fc56&language=pt-BR&page=1";
 const images = "https://image.tmdb.org/t/p/w500";
-const search_movies = "https://api.themoviedb.org/3/search/movie?api_key=3ac59a12f773222a0f0e3bf66560fc56&query=";
+const search_movies = "https://api.themoviedb.org/3/search/movie?api_key=3ac59a12f773222a0f0e3bf66560fc56&language=pt-BR&query=";
 
 const section = document.querySelector('section');
 const form = document.querySelector('#form');
@@ -19,7 +19,7 @@ function showMoviesBySearch(movies) {
         section.innerHTML = '';
 
         movies.forEach(movie => {
-        const { poster_path, title, vote_average } = movie;
+        const { poster_path, title, vote_average, overview } = movie;
 
         const movieEl = document.createElement('div');
         movieEl.classList.add('movies');
@@ -29,6 +29,11 @@ function showMoviesBySearch(movies) {
                 <div class="movie-info">
                     <h2>${title}</h2>
                     <span class="${getRates(vote_average)}">${vote_average}</span>
+                </div>
+
+                <div class="synopsis">
+                    <h3>Sinopse:</h3>
+                    ${overview}
                 </div>
         `;
 
