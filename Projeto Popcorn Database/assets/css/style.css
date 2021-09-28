@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.logo {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #ffffff;
+    transition: all 0.5s ease-out;
+}
+
+.logo:hover {
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 50px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movies {
+    width: 300px;
+    background-color: #222222;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    margin: 1em;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.movies img {
+    width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.movie-info h2 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.movie-info span {
+    background-color: #003aa7; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.movie-info span.green {
+    background-color: #18a113;
+}
+
+.movie-info span.yellow {
+    background-color: #dfb601;
+}
+
+.movie-info span.red {
+    background-color: #d60202;
+}
+
+.search {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    padding: 5px 50px;
+}
+
+input[type="text"] {
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 180px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+} 
+
+input:focus {
+    width: 210px;
+}
+
+.synopsis {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    overflow: auto;
+    transform: translateY(100%);
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 15px;
+    transition: all 0.5s ease-out;
+}
+
+.movies:hover .synopsis {
+    transform: translateY(0);
+}
