@@ -1,10 +1,29 @@
 import { useState, useEffect } from "react";
-import { CharactersContainer } from "./CharactersStyle";
+import axios from "axios";
+import { CharactersContainer, CharactersContent } from "./CharactersStyle";
 import Nav from "../../components/Nav/Nav";
 import NavItems from "../../components/Nav/NavItems";
+import Search from "../../components/Search/Search";
+import CharacterList from "../../components/CharacterList/CharacterList";
 
 const Characters = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const getItems = async () => {
+      const result = await axios(
+        `https://www.breakingbadapi.com/api/characters?name=${query}`
+      );
+
+      setItems(result.data);
+      setLoading(false);
+    };
+
+    getItems();
+  }, [query]);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -15,10 +34,10 @@ const Characters = () => {
       <NavItems isOpen={isOpen} toggle={toggle} />
       <Nav toggle={toggle} />
       <CharactersContainer>
-        <h1>Olá mundo!</h1>
-        <div>
-          <p>lorem ipsum dolor sit amet</p>
-        </div>
+        <CharactersContent>
+          <Search getQuery={(q) => setQuery(q)} />
+          <CharacterList loading={loading} items={items} />
+        </CharactersContent>
       </CharactersContainer>
     </>
   );

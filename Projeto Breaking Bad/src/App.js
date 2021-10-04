@@ -7,7 +7,7 @@ function App() {
     <Router>
       <GlobalStyle />
       <Switch>
-        <Route path="/" component={Characters} />
+        <Route path="/" component={Characters} exact />
       </Switch>
     </Router>
   );

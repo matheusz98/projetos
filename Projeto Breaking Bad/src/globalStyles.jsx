@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import bg from "./images/bg.jpg";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -16,9 +15,5 @@ export const GlobalStyle = createGlobalStyle`
 
     img {
         max-width: 100%;
-    }
-
-    body {
-        height: 100vh;
     }
 `;
