@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import {
   CharactersContainer,
   CharactersContent,
-  Card,
   BtnContainer,
 } from "./CharactersStyle";
 import Loading from "../Loading/Loading";
 import { Button } from "../Button/Button";
 import Search from "../Search/Search";
+import CharacterList from "./CharacterList";
+import Pagination from "../Pagination/Pagination";
 
 const Characters = () => {
   const [items, setItems] = useState([]);
@@ -17,12 +17,8 @@ const Characters = () => {
   const [query, setQuery] = useState("");
 
   // Pagination
-  const [moreCharacters, setMoreCharacters] = useState(6);
-  const load = items.slice(0, moreCharacters);
-
-  const loadMoreCharacters = () => {
-    setMoreCharacters(moreCharacters + moreCharacters);
-  };
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
 
   useEffect(() => {
     const getItems = async () => {
@@ -36,26 +32,24 @@ const Characters = () => {
     getItems();
   }, [query]);
 
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentItems = items.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const pagination = (pageNumber) => setCurrentPage(pageNumber);
+
   return loading ? (
     <Loading />
   ) : (
     <CharactersContainer>
       <Search getQuery={(q) => setQuery(q)} />
-      <CharactersContent>
-        {load.map((item) => (
-          <Card>
-            <Link to={`/${item.char_id}`}>
-              <img src={item.img} alt={item.name} />
-              <h2>{item.name}</h2>
-            </Link>
-          </Card>
-        ))}
-      </CharactersContent>
-      <BtnContainer>
-        <Button primary white onClick={() => loadMoreCharacters()}>
-          Load more
-        </Button>
-      </BtnContainer>
+      <CharacterList loading={loading} items={currentItems} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={items.length}
+        pagination={pagination}
+      />
     </CharactersContainer>
   );
 };
