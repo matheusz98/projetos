@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { Button } from "../Button/Button";
 import axios from "axios";
-import {} from "./CharacterDetailStyle";
+import {
+  CharacterDetailContainer,
+  CharacterDetailContent,
+  CharacterImg,
+  CharacterInfo,
+  BtnContent,
+} from "./CharacterDetailStyle";
 import Loading from "../Loading/Loading";
 
 const CharacterDetail = () => {
@@ -24,16 +31,53 @@ const CharacterDetail = () => {
   return loading ? (
     <Loading />
   ) : (
-    <div>
+    <CharacterDetailContainer>
       {details.map((detail) => (
-        <div key={detail.char_id}>
-          <h2>{detail.name}</h2>
-          <img src={detail.img} />
-          <p>{detail.birthday}</p>
-          <p>{detail.nickname}</p>
-        </div>
+        <CharacterDetailContent key={detail.char_id}>
+          <CharacterImg>
+            <img src={detail.img} alt={detail.name} />
+          </CharacterImg>
+          <CharacterInfo>
+            <ul>
+              <li>
+                <h2>{detail.name}</h2>
+              </li>
+
+              <li>
+                <p>Birthday: {detail.birthday}</p>
+              </li>
+
+              <li>
+                <p>Occupation: {detail.occupation} </p>
+              </li>
+
+              <li>
+                <p>Status: {detail.status} </p>
+              </li>
+
+              <li>
+                <p>
+                  Seasons where {detail.name} appears: Season{" - "}
+                  {detail.appearance}
+                </p>
+              </li>
+
+              <li>
+                <p>Portrayed by {detail.portrayed}</p>
+              </li>
+            </ul>
+
+            <BtnContent>
+              <Button primary white>
+                <Link to="/" style={{ color: "#ffffff" }}>
+                  Back to Characters
+                </Link>
+              </Button>
+            </BtnContent>
+          </CharacterInfo>
+        </CharacterDetailContent>
       ))}
-    </div>
+    </CharacterDetailContainer>
   );
 };
 

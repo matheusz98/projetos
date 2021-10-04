@@ -18,10 +18,8 @@ const App = () => {
       <NavItems isOpen={isOpen} toggle={toggle} />
       <Nav toggle={toggle} />
       <Switch>
-        <div className="container">
-          <Route path="/" component={Characters} exact />
-          <Route path="/:char_id" component={CharacterDetail} />
-        </div>
+        <Route path="/" component={Characters} exact />
+        <Route path="/:char_id" component={CharacterDetail} />
       </Switch>
     </Router>
   );
