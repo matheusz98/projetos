@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const Cards = styled.div`
+export const CharactersContainer = styled.section`
+  padding-top: 15rem;
+`;
+
+export const CharactersContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.625rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   margin-top: 5rem;
-  padding: 0 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -16,7 +19,7 @@ export const Cards = styled.div`
   }
 `;
 
-export const CharacterCard = styled.div`
+export const Card = styled.div`
   cursor: pointer;
 
   img {
@@ -39,3 +42,11 @@ export const CharacterCard = styled.div`
     font-weight: 700;
   }
 `;
+
+export const BtnContainer = styled.div `
+  width: 100%;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

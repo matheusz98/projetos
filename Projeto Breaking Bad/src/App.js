@@ -1,16 +1,30 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { GlobalStyle } from "./globalStyles";
-import Characters from "./pages/Characters/Characters";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Characters from "./components/Characters/Characters";
+import Nav from "./components/Nav/Nav";
+import NavItems from "./components/Nav/NavItems";
+import "./App.css";
+import CharacterDetail from "./components/Characters/CharacterDetail";
 
-function App() {
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Router>
-      <GlobalStyle />
+      <NavItems isOpen={isOpen} toggle={toggle} />
+      <Nav toggle={toggle} />
       <Switch>
-        <Route path="/" component={Characters} exact />
+        <div className="container">
+          <Route path="/" component={Characters} exact />
+          <Route path="/:char_id" component={CharacterDetail} />
+        </div>
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
