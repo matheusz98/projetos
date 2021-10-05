@@ -19,12 +19,6 @@ const NavItems = ({ isOpen, toggle }) => {
             <NavbarLink to="/" onClick={toggle}>
               Characters
             </NavbarLink>
-            <NavbarLink to="/episodes" onClick={toggle}>
-              Episodes
-            </NavbarLink>
-            <NavbarLink to="/quotes" onClick={toggle}>
-              Quotes
-            </NavbarLink>
           </NavbarMenu>
         </NavbarItemsWrapper>
       </NavbarItemsContainer>

@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  CharactersContainer,
-  CharactersContent,
-  BtnContainer,
-} from "./CharactersStyle";
+import { CharactersContainer } from "./CharactersStyle";
 import Loading from "../Loading/Loading";
-import { Button } from "../Button/Button";
 import Search from "../Search/Search";
 import CharacterList from "./CharacterList";
 import Pagination from "../Pagination/Pagination";

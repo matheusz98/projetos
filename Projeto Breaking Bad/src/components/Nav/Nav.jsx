@@ -45,12 +45,6 @@ const Nav = ({ toggle }) => {
             <NavbarItem>
               <NavbarLinks to="/">Characters</NavbarLinks>
             </NavbarItem>
-            <NavbarItem>
-              <NavbarLinks to="/episodes">Episodes</NavbarLinks>
-            </NavbarItem>
-            <NavbarItem>
-              <NavbarLinks to="/quotes">Quotes</NavbarLinks>
-            </NavbarItem>
           </NavbarMenu>
         </NavbarContainer>
       </Navbar>
